@@ -1,6 +1,6 @@
 [build]
   command = "npm ci && npx ng build --configuration production"
-  publish = "dist/my-app"
+  publish = "dist/my-app/browser"
 
 [build.environment]
   NODE_VERSION = "20"
