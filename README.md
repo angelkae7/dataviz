@@ -1,5 +1,5 @@
 # Preview
-Disponible sur https://datavizcyber.netlify.app/general
+Disponible sur https://datavizcyber.netlify.app
 
 # MyApp
 
