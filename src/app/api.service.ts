@@ -7,21 +7,21 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
   // Général
-  private apiUrl = 'http://localhost/dataviz/api/total_deces_par_annee.php';
-  private apiUrlDecesParAge = 'http://localhost/dataviz/api/deces_par_age.php';
-  private apiUrlTopCausesByYear = 'http://localhost/dataviz/api/top_causes_by_year.php';
-  private apiUrlAgeGroupPercentageByCause = 'http://localhost/dataviz/api/age_group_percentage_by_cause.php';
+  private apiUrl = 'https://dataviz.alwaysdata.net/dataviz/api/total_deces_par_annee.php';
+  private apiUrlDecesParAge = 'https://dataviz.alwaysdata.net/dataviz/api/deces_par_age.php';
+  private apiUrlTopCausesByYear = 'https://dataviz.alwaysdata.net/dataviz/api/top_causes_by_year.php';
+  private apiUrlAgeGroupPercentageByCause = 'https://dataviz.alwaysdata.net/dataviz/api/age_group_percentage_by_cause.php';
 
   // Corps-OS + Naissance + Quotidien
-  private apiCorpsTotalDecesParAnnee = 'http://localhost/dataviz/api/corps_total_deces_par_annee.php';
-  private apiDecesParBloc = 'http://localhost/dataviz/api/deces_par_bloc.php'; // Modifié pour la nouvelle API
-  private apiDecesParClasse = 'http://localhost/dataviz/api/deces_par_class.php'; // Nouvelle API pour les classes
-  private apiUrlAgeGroupPercentageByBloc = 'http://localhost/dataviz/api/age_group_percentage_by_bloc.php';
+  private apiCorpsTotalDecesParAnnee = 'https://dataviz.alwaysdata.net/dataviz/api/corps_total_deces_par_annee.php';
+  private apiDecesParBloc = 'https://dataviz.alwaysdata.net/dataviz/api/deces_par_bloc.php'; // Modifié pour la nouvelle API
+  private apiDecesParClasse = 'https://dataviz.alwaysdata.net/dataviz/api/deces_par_class.php'; // Nouvelle API pour les classes
+  private apiUrlAgeGroupPercentageByBloc = 'https://dataviz.alwaysdata.net/dataviz/api/age_group_percentage_by_bloc.php';
 
   //H-et-F
-  private apiUrlDecesParSexeEtAnnee = 'http://localhost/dataviz/api/deces_par_sexe_et_annee.php';
-  private apiUrlDecesParClasseAgeEtSexe = 'http://localhost/dataviz/api/deces_par_classe_age_et_sexe.php';
-  private apiUrlDecesParCausesEtSexe = 'http://localhost/dataviz/api/deces_par_causes_et_sexe.php';
+  private apiUrlDecesParSexeEtAnnee = 'https://dataviz.alwaysdata.net/dataviz/api/deces_par_sexe_et_annee.php';
+  private apiUrlDecesParClasseAgeEtSexe = 'https://dataviz.alwaysdata.net/dataviz/api/deces_par_classe_age_et_sexe.php';
+  private apiUrlDecesParCausesEtSexe = 'https://dataviz.alwaysdata.net/dataviz/api/deces_par_causes_et_sexe.php';
 
   constructor(private http: HttpClient) { }
 
