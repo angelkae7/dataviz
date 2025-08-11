@@ -1,0 +1,96 @@
+<section class="parent">
+  <div class="div1 br-15 bg-dark p-15 shadow">
+    <h1>Maladie de l'Âme</h1>
+    <span class="chivo f-12">
+      Le concept de "Maladie de l'Âme" relie les troubles mentaux, les lésions
+      traumatiques, certaines infections, et les causes externes de mortalité à
+      des facteurs psychologiques et sociaux sous-jacents.
+    </span>
+  </div>
+
+  <div class="div2 inner-shadow p-25 br-15 chivo">
+    Oublie pas d'interagir avec les données pour faire apparaitre toujours plus de précision !
+  </div>
+  <!-- Premier graphique: Heatmap -->
+  <div class="div3 float shadow-lighter p-15 br-15 bg-grey">
+    <apx-chart
+      [series]="chartOptionsCauses?.series"
+      [chart]="chartOptionsCauses?.chart"
+      [xaxis]="chartOptionsCauses?.xaxis"
+      [dataLabels]="chartOptionsCauses?.dataLabels"
+      [fill]="chartOptionsCauses?.fill"
+      [title]="chartOptionsCauses?.title"
+      [legend]="chartOptionsCauses?.legend"
+      [tooltip]="chartOptionsCauses?.tooltip"
+      [plotOptions]="chartOptionsCauses?.plotOptions"
+    ></apx-chart>
+  </div>
+
+  <!-- Deuxième graphique: Bar Chart -->
+  <div class="div4">
+    <apx-chart
+      [chart]="chartOptionsBloc?.chart"
+      [series]="chartOptionsBloc?.series"
+      [xaxis]="chartOptionsBloc?.xaxis"
+      [yaxis]="chartOptionsBloc?.yaxis"
+      [fill]="chartOptionsBloc?.fill"
+      [dataLabels]="chartOptionsBloc?.dataLabels"
+      [title]="chartOptionsBloc?.title"
+      [tooltip]="chartOptionsBloc?.tooltip"
+      [plotOptions]="chartOptionsBloc?.plotOptions"
+    ></apx-chart>
+  </div>
+  <!-- <div class="div5">
+      <div class="loader-ring">
+        <div class="loader-ring-light"> </div>
+      </div>      
+    </div> -->
+  <div class="div6 card">
+    <apx-chart
+      [series]="chartOptionsAgeBloc.series"
+      [chart]="chartOptionsAgeBloc.chart"
+      [xaxis]="chartOptionsAgeBloc.xaxis"
+      [yaxis]="chartOptionsAgeBloc.yaxis"
+      [dataLabels]="chartOptionsAgeBloc.dataLabels"
+      [plotOptions]="chartOptionsAgeBloc.plotOptions"
+      [tooltip]="chartOptionsAgeBloc.tooltip"
+      [title]="chartOptionsAgeBloc.title"
+      [fill]="chartOptionsAgeBloc.fill"
+      [markers]="chartOptionsAgeBloc.markers"
+      [labels]="chartOptionsAgeBloc.labels"
+    ></apx-chart>
+  </div>
+
+  <div class="div7 card">
+    <apx-chart
+      [series]="chartOptionsClassesByBloc.series"
+      [chart]="chartOptionsClassesByBloc.chart"
+      [xaxis]="chartOptionsClassesByBloc.xaxis"
+      [yaxis]="chartOptionsClassesByBloc.yaxis"
+      [dataLabels]="chartOptionsClassesByBloc.dataLabels"
+      [plotOptions]="chartOptionsClassesByBloc.plotOptions"
+      [tooltip]="chartOptionsClassesByBloc.tooltip"
+      [title]="chartOptionsClassesByBloc.title"
+      [fill]="chartOptionsClassesByBloc.fill"
+    ></apx-chart>
+  </div>
+  <!-- <div class="div8">
+        CLASSE
+    </div> -->
+  <div class="div9"></div>
+  <div class="div10 card">
+    <apx-chart
+      [series]="chartOptionsAgeChapitre.series"
+      [labels]="chartOptionsAgeChapitre.labels"
+      [chart]="chartOptionsAgeChapitre.chart"
+      [xaxis]="chartOptionsAgeChapitre.xaxis"
+      [yaxis]="chartOptionsAgeChapitre.yaxis"
+      [dataLabels]="chartOptionsAgeChapitre.dataLabels"
+      [plotOptions]="chartOptionsAgeChapitre.plotOptions"
+      [tooltip]="chartOptionsAgeChapitre.tooltip"
+      [title]="chartOptionsAgeChapitre.title"
+      [fill]="chartOptionsAgeChapitre.fill"
+      [markers]="chartOptionsAgeChapitre.markers"
+    ></apx-chart>
+  </div>
+</section>

@@ -1,0 +1,66 @@
+<section class="parent">
+  
+  
+    <div class="div1  br-15 bg-dark p-15 shadow ">
+      <h1>Naissance</h1>
+      <span class="chivo f-12">C'est une vue d'ensemble des décès liés ... en
+        Nouvelle-Calédonie, avec une analyse progressive des causes par chapitre,
+        bloc et classe pour mieux comprendre les pathologies spécifiques.</span
+      >
+    </div>
+  
+    <div class="div2">
+      
+    </div>
+    <!-- Premier graphique: Heatmap -->
+    <div class="div4 float shadow-lighter p-5 br-15 bg-grey " >
+      <apx-chart
+        [series]="chartOptionsCauses?.series"
+        [chart]="chartOptionsCauses?.chart"
+        [xaxis]="chartOptionsCauses?.xaxis"
+        [dataLabels]="chartOptionsCauses?.dataLabels"
+        [fill]="chartOptionsCauses?.fill"
+        [title]="chartOptionsCauses?.title"
+        [legend]="chartOptionsCauses?.legend"
+        [tooltip]="chartOptionsCauses?.tooltip"
+        [plotOptions]="chartOptionsCauses?.plotOptions"
+      ></apx-chart>
+
+    </div>
+  
+    <!-- Deuxième graphique: Bar Chart -->
+    <div class="div5 br-15 bg-dark p-15 shadow wh-font">
+      <apx-chart
+        [chart]="chartOptionsBloc?.chart"
+        [series]="chartOptionsBloc?.series"
+        [xaxis]="chartOptionsBloc?.xaxis"
+        [yaxis]="chartOptionsBloc?.yaxis"
+        [fill]="chartOptionsBloc?.fill"
+        [dataLabels]="chartOptionsBloc?.dataLabels"
+        [title]="chartOptionsBloc?.title"
+        [tooltip]="chartOptionsBloc?.tooltip"
+        [plotOptions]="chartOptionsBloc?.plotOptions"
+      ></apx-chart>
+    </div>
+    <div class="div3"></div>
+
+    <div class="div6">
+        <a routerLink="/naissance" (click)="triggerOnNaissanceClick()">
+      <apx-chart
+      [series]="chartOptionsClassesByBloc.series"
+      [chart]="chartOptionsClassesByBloc.chart"
+      [xaxis]="chartOptionsClassesByBloc.xaxis"
+      [yaxis]="chartOptionsClassesByBloc.yaxis"
+      [dataLabels]="chartOptionsClassesByBloc.dataLabels"
+      [plotOptions]="chartOptionsClassesByBloc.plotOptions"
+      [tooltip]="chartOptionsClassesByBloc.tooltip"
+      [title]="chartOptionsClassesByBloc.title"
+      [fill]="chartOptionsClassesByBloc.fill"
+    ></apx-chart>
+        </a>
+    </div>
+
+      
+   
+  </section>
+  

@@ -1,0 +1,64 @@
+<section class="parent">
+        <div class="div1 br-15 bg-dark p-15 shadow">
+          <h1>Quotidien</h1>
+          <span class="chivo f-12">
+            Nous vous offrons une vue d'ensemble des données liées au quotidien en
+            Nouvelle-Calédonie, avec des graphiques détaillant les tendances et les
+            principales caractéristiques pour mieux comprendre les aspects quotidiens
+            de la santé.
+          </span>
+        </div>
+      
+        <div class="div2 justify br-15 chivo f-12 bg-lighter p-15 inner-shadow">
+          Les maladies endocriniennes, métaboliques et nutritionnelles sont classées
+          dans la catégorie « quotidien » car elles nécessitent une gestion constante
+          des habitudes alimentaires, des traitements médicaux, et des ajustements de
+          mode de vie qui impactent directement la routine quotidienne des individus.
+        </div>
+        <!-- Premier graphique: Heatmap -->
+        <div class="div3 bg-lighter br-15 shadow-lighter">
+          <apx-chart
+            [series]="chartOptionsCauses?.series"
+            [chart]="chartOptionsCauses?.chart"
+            [xaxis]="chartOptionsCauses?.xaxis"
+            [dataLabels]="chartOptionsCauses?.dataLabels"
+            [fill]="chartOptionsCauses?.fill"
+            [title]="chartOptionsCauses?.title"
+            [legend]="chartOptionsCauses?.legend"
+            [tooltip]="chartOptionsCauses?.tooltip"
+            [plotOptions]="chartOptionsCauses?.plotOptions"
+          ></apx-chart>
+        </div>
+      
+        <!-- Deuxième graphique: Bar Chart -->
+        <div class="div4">
+          <apx-chart
+            [chart]="chartOptionsBloc?.chart"
+            [series]="chartOptionsBloc?.series"
+            [xaxis]="chartOptionsBloc?.xaxis"
+            [yaxis]="chartOptionsBloc?.yaxis"
+            [fill]="chartOptionsBloc?.fill"
+            [dataLabels]="chartOptionsBloc?.dataLabels"
+            [title]="chartOptionsBloc?.title"
+            [tooltip]="chartOptionsBloc?.tooltip"
+            [plotOptions]="chartOptionsBloc?.plotOptions"
+          ></apx-chart>
+        </div>
+        <div class="div5 card">
+      
+        </div>
+        <div class="div6 card">
+          <apx-chart
+            [series]="chartOptionsClassesByBloc.series"
+            [chart]="chartOptionsClassesByBloc.chart"
+            [xaxis]="chartOptionsClassesByBloc.xaxis"
+            [yaxis]="chartOptionsClassesByBloc.yaxis"
+            [dataLabels]="chartOptionsClassesByBloc.dataLabels"
+            [plotOptions]="chartOptionsClassesByBloc.plotOptions"
+            [tooltip]="chartOptionsClassesByBloc.tooltip"
+            [title]="chartOptionsClassesByBloc.title"
+            [fill]="chartOptionsClassesByBloc.fill"
+          ></apx-chart>
+        </div>
+      </section>
+      

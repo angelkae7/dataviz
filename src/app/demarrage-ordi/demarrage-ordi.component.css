@@ -1,0 +1,62 @@
+.terminal {
+  background-color: black;
+  color: green;
+  font-family: 'Chivo', sans-serif;
+  font-size: 1em;
+  line-height: 2;
+  padding: 20px;
+  height: 100vh;
+  overflow: hidden;
+  white-space: pre-wrap; /* Ensure lines wrap */
+  position: relative; /* Ensure child elements like .enter-text are positioned relative to .terminal */
+}
+
+.cursor {
+  background-color: green;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    background-color: transparent;
+  }
+}
+
+.loading-bar-container {
+  position: absolute;
+  font-family: 'Chivo', sans-serif;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 10px;
+  background-color: #333;
+}
+
+.loading-bar {
+  width: 0;
+  height: 100%;
+  background-color: green;
+  animation: loading 3s linear forwards; /* Match duration with setTimeout */
+}
+
+@keyframes loading {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+.enter-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  color: green;
+  animation: flash 2s infinite;
+}
+
+@keyframes flash {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}

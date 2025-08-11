@@ -1,0 +1,29 @@
+<h2>Les maladies de l'âme</h2>
+<form (ngSubmit)="validate($event)">
+    <div class="question" *ngFor="let question of secondQuestions; let i = index">
+        <label>{{ question.label }}</label>
+        <select [(ngModel)]="question.selectedValue" [ngClass]="{'incorrect': question.isIncorrect}"
+            [disabled]="isSecondQuizLocked" name="question{{ i }}">
+            <option *ngFor="let option of question.options" [value]="option.text">{{ option.text }}</option>
+        </select>
+    </div>
+    <button type="submit" *ngIf="!isSecondQuizLocked">Valider</button>
+</form>
+<div *ngIf="showSecondInsufficientDataPopup" class="popup">
+    <div class="popup-content">
+        <span class="close" (click)="closePopup()"></span>
+        <app-trois-quiz></app-trois-quiz> <!-- Ajoutez ici le composant trois-quiz -->
+    </div>
+</div>
+
+<div *ngIf="showSecondPopupParagraph1" class="popup-paragraph">
+    <p>Charlie : J'ai du me tromper quelque part...</p>
+</div>
+<div *ngIf="showSecondPopupParagraph2" class="popup-paragraph">
+    <p>Charlie : Encore une autre catégorie ?</p>
+</div>
+
+<audio id="trueSound" src="assets/debut-jeu/yes.mp3"></audio>
+<audio id="falseSound" src="assets/debut-jeu/nope.mp3"></audio>
+<audio id="newCatDeux" src="assets/quiz/new_categorie_deux.mp3"></audio>
+<audio id="faux" src="assets/quiz/faux.mp3"></audio>

@@ -1,0 +1,58 @@
+<div class="container">
+  <!-- Partie Quiz -->
+  <div *ngIf="showTroisQuiz" class="quiz">
+    <h2>Les différences entre les hommes et les femmes</h2>
+    <form (ngSubmit)="validateTroisQuiz($event)">
+      <div class="question" *ngFor="let question of troisQuestions; let i = index">
+        <label>{{ question.label }}</label>
+        <select [(ngModel)]="question.selectedValue" [ngClass]="{'incorrect': question.isIncorrect}" [disabled]="isTroisQuizLocked" name="question{{ i }}">
+          <option *ngFor="let option of question.options" [value]="option.text">{{ option.text }}</option>
+        </select>
+      </div>
+      <button type="submit" *ngIf="!isTroisQuizLocked">Valider</button>
+    </form>
+    <div *ngIf="showTroisInsufficientDataPopup" class="popup">
+      <div class="popup-content">
+        <span class="close" (click)="closeTroisPopup()"></span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Partie Discu -->
+  <div *ngIf="showTroisConv" class="conversation">
+    <div *ngFor="let message of troisMessages" class="message" [ngClass]="message.sender">
+      {{ message.displayedText }}
+    </div>
+  </div>
+  
+  <!-- Bouton discu -->
+  <button *ngIf="showTroisConv && canClickSendButtonTrois" [disabled]="!canClickSendButtonTrois" [ngClass]="{'enabled': canClickSendButtonTrois, 'disabled': !canClickSendButtonTrois}" (click)="sendTroisMessage()">Envoyer un message</button>
+
+  <!-- Bouton fin de discu -->
+  <button *ngIf="currentMessageIndexTrois >= troisMessages.length" (click)="finishConversation()">Finir la conversation</button>
+
+  <!-- Pop-up Paragraphs -->
+  <div *ngIf="showTroisPopupParagraph1" class="popup-paragraph">
+    <p>Charlie : J'ai dû me tromper quelque part...</p>
+  </div>
+  <div *ngIf="showTroisPopupParagraph2" class="popup-paragraph">
+    <p>Charlie : Ça y est ça fonctionne ! Je vais enfin avoir des réponses à mes questions !</p>
+  </div>
+  
+  <!-- Audio elements -->
+  <audio id="trueSoundTrois" src="assets/debut-jeu/yes.mp3"></audio>
+  <audio id="falseSoundTrois" src="assets/debut-jeu/nope.mp3"></audio>
+  <audio id="questionnaireJusteTrois" src="assets/quiz/juste.mp3"></audio>
+  <audio id="fauxTrois" src="assets/quiz/faux.mp3"></audio>
+</div>
+
+<div *ngIf="showOverlay" class="overlay">
+  <button id="startPcButton" class="hidden-button" (click)="credits()">Eteindre le PC</button>
+</div>
+
+
+<div *ngIf="showCredit" class="overlay">
+  <video width="100%" height="100%" autoplay>
+    <source src="assets/fin/credits.mp4" type="video/mp4">
+    </video>
+</div>

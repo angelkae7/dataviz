@@ -1,0 +1,112 @@
+<section class="parent">
+    <div class="div1 card bg-dark p-10 shadow">
+      <h1>Général</h1>
+      <span class="chivo f-12">
+        C'est une vue d'ensemble des données de mortalité en
+        Nouvelle-Calédonie, avec un aperçu des tendances et des principales causes
+        de décès.
+      </span>
+    </div>
+  
+    <div class="div2  justify chivo f-12 bg-lighter p-15 inner-shadow">
+      Cette analyse repose sur les données des causes médicales de décès survenus
+      en Nouvelle-Calédonie entre 2011 et 2023. Les informations proviennent des
+      certificats médicaux, codifiés selon <a href="https://fr.wikipedia.org/wiki/Liste_de_codes_CIM-10">la CIM-10 (Classification
+      Internationale des Maladies)</a>, une norme établie par l'Organisation Mondiale
+      de la Santé (OMS). Ces données, incluent les décès de toutes les personnes
+      décédées sur le territoire, qu'elles y résident ou non.
+      <br /><br />
+  
+      Attention à partir du deuxième graphique (mauve) certaines causes (chapitres) ont été exclues de
+      l'analyse pour se concentrer sur les causes directes de décès. (pas des causes de décès en elles-même)
+      <div class="tooltip">
+        <div class="icon">i</div> (<a href="https://www.aideaucodage.fr/cim-codes+d+utilisation+particuliere">22,</a><a href="https://www.aideaucodage.fr/cim-facteurs+influant+sur+l+etat+de+sante+et+motifs+de+recours+aux+services+de+sante">21</a>,<a href="https://www.aideaucodage.fr/cim-symptomes+signes+et+resultats+anormaux+d+examens+cliniques+et+de+laboratoire+non+classes+ailleurs">18</a>)
+        <div class="tooltiptext">
+          Chapitre 22 | Codes d'utilisation particulière <br>
+          Chapitre 21 | Facteurs influant sur l'état de santé et motifs de recours aux services de santé <br>
+          Chapitre 18 | symptômes, signes et résultats anormaux d'examens cliniques et de laboratoire, non classés ailleurs
+        </div>
+      </div>  
+    </div>
+  
+    <div class="div3 card p-25">
+      <div class="loader">
+        <div class="red bar"></div>
+        <div class="orange bar"></div>
+        <div class="yellow bar"></div>
+        <div class="green bar"></div>
+        <div class="blue bar"></div>
+        <div class="violet bar"></div>
+      </div>
+    </div>
+  
+    <!-- Nombre total de décès par année -->
+  
+    <div class="div4 float card inner-shadow p-25 ">
+      <apx-chart
+        [series]="chartOptionsTotalDeces.series"
+        [chart]="chartOptionsTotalDeces.chart"
+        [xaxis]="chartOptionsTotalDeces.xaxis"
+        [title]="chartOptionsTotalDeces.title"
+        [fill]="chartOptionsTotalDeces.fill"
+        [plotOptions]="chartOptionsTotalDeces.plotOptions"
+        [dataLabels]="chartOptionsTotalDeces.dataLabels"
+        [tooltip]="chartOptionsTotalDeces.tooltip"
+        [yaxis]="chartOptionsTotalDeces.yaxis"
+        [stroke]="chartOptionsTotalDeces.stroke"
+        [legend]="chartOptionsTotalDeces.legend"
+        [subtitle]="chartOptionsTotalDeces.subtitle"
+      ></apx-chart>
+    </div>
+    <!-- Nombre total de décès par âge et par année -->
+    <div class="div5 card">
+      <apx-chart
+      [series]="chartOptionsDecesParClasseAge.series"
+      [chart]="chartOptionsDecesParClasseAge.chart"
+      [xaxis]="chartOptionsDecesParClasseAge.xaxis"
+      [title]="chartOptionsDecesParClasseAge.title"
+      [fill]="chartOptionsDecesParClasseAge.fill"
+      [dataLabels]="chartOptionsDecesParClasseAge.dataLabels"
+      [tooltip]="chartOptionsDecesParClasseAge.tooltip"
+      [yaxis]="chartOptionsDecesParClasseAge.yaxis"
+      [stroke]="chartOptionsDecesParClasseAge.stroke"
+      [legend]="chartOptionsDecesParClasseAge.legend"
+      ></apx-chart>
+    </div>
+    
+    <div class="div6 float inner-shadow bg-grey p-15 pitagon f-12" >
+      Chaque graphique utilise les données du précédent pour fournir des détails plus spécifiques et précis.
+  
+    </div>
+  
+    
+    <div class="div7 float card p-25">
+      <apx-chart
+        [series]="chartOptionsTopCauses.series"
+        [chart]="chartOptionsTopCauses.chart"
+        [labels]="chartOptionsTopCauses.labels"
+        [title]="chartOptionsTopCauses.title"
+        [fill]="chartOptionsTopCauses.fill"
+        [markers]="chartOptionsTopCauses.markers"
+        [dataLabels]="chartOptionsTopCauses.dataLabels"
+        [tooltip]="chartOptionsTopCauses.tooltip"
+        [legend]="chartOptionsTopCauses.legend"
+        [grid]="chartOptionsTopCauses.grid"
+      ></apx-chart>
+    </div>
+  
+    <div class="div8 float card p-25">
+      <apx-chart
+        [series]="chartOptionsAgeGroupPercentage.series"
+        [chart]="chartOptionsAgeGroupPercentage.chart"
+        [labels]="chartOptionsAgeGroupPercentage.labels"
+        [title]="chartOptionsAgeGroupPercentage.title"
+        [fill]="chartOptionsAgeGroupPercentage.fill"
+        [markers]="chartOptionsAgeGroupPercentage.markers"
+        [dataLabels]="chartOptionsAgeGroupPercentage.dataLabels"
+        [tooltip]="chartOptionsAgeGroupPercentage.tooltip"
+        [legend]="chartOptionsAgeGroupPercentage.legend"
+      ></apx-chart>
+    </div>
+  </section>
+  

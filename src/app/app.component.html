@@ -1,0 +1,152 @@
+<!-- Ajout Lory : -->
+<div *ngIf="showDebut">
+   <app-debut (done)="hideDebutComponent()"></app-debut>
+</div>
+<app-demarrage-ordi *ngIf="showDemarrageOrdi" (done)="hideDemarrageOrdiComponent()"></app-demarrage-ordi>
+
+<link rel="stylesheet"
+   href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+
+<!-- Ajout Lory : -->
+<div *ngIf="showMainContent">
+   <div class="menuToggle shadow-lighter">
+      <div class="icon">
+         <div class="imageBox">
+            <img src="https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=80&q=50" alt="profile image" />
+         </div>
+      </div>
+   </div>
+
+   <div class="sidebar">
+      <ul>
+
+         <li class="logo">
+            <a href="#">
+               <div class="icon">
+                  <span class="material-symbols-rounded">
+                     diamond
+                  </span>
+               </div>
+               <div class="text">DATAIA</div>
+            </a>
+         </li>
+
+         <div class="Menulist">
+
+            <li class="active">
+               <a routerLink="/home">
+                  <div class="icon">
+                     <span class="material-symbols-rounded">
+                        home
+                     </span>
+                  </div>
+                  <div class="text">Home</div>
+               </a>
+            </li>
+
+            <li>
+               <a routerLink="/general">
+                  <div class="icon">
+                     <span class="material-symbols-rounded">
+                        space_dashboard
+                        </span>
+                  </div>
+                  <div class="text">Général</div>
+               </a>
+            </li>
+            
+            <li>
+               <a [routerLink]="categoryService.blockedCategories['corps-os'] ? '/corps-os' : ''"
+                  (click)="navigateToCategory($event, 'corps-os')">
+                  <div class="icon">
+                     <span class="material-symbols-rounded">
+                        {{ categoryService.blockedCategories['corps-os'] ? 'femur_alt' : 'lock' }}
+                     </span>
+                  </div>
+                  <div class="text">Corps et Os</div>
+               </a>
+            </li>
+            <li>
+               <a [routerLink]="categoryService.blockedCategories['naissance'] ? '/naissance' : ''"
+                  (click)="navigateToCategory($event, 'naissance')">
+                  <div class="icon">
+                     <span class="material-symbols-rounded">
+                        {{ categoryService.blockedCategories['naissance'] ? 'pregnancy' : 'lock' }}
+                     </span>
+                  </div>
+                  <div class="text">Naissance</div>
+               </a>
+            </li>
+            <li>
+               <a [routerLink]="categoryService.blockedCategories['quotidien'] ? '/quotidien' : ''"
+                  (click)="navigateToCategory($event, 'quotidien')">
+                  <div class="icon">
+                     <span class="material-symbols-rounded">
+                        {{ categoryService.blockedCategories['quotidien'] ? 'alarm' : 'lock' }}
+                     </span>
+                  </div>
+                  <div class="text">Quotidien</div>
+               </a>
+            </li>
+            <li [ngClass]="{'blocked': !categoryService.blockedCategories['maladies']}">
+               <a [routerLink]="categoryService.blockedCategories['maladies'] ? '/maladies' : ''"
+                  (click)="navigateToCategory($event, 'maladies')">
+                  <div class="icon">
+                     <span class="material-symbols-rounded">
+                        {{ categoryService.blockedCategories['maladies'] ? 'heart_broken' : 'lock' }}
+                     </span>
+                  </div>
+                  <div class="text">Maladies</div>
+               </a>
+            </li>
+            <li [ngClass]="{'blocked': !categoryService.blockedCategories['h-et-f']}">
+               <a [routerLink]="categoryService.blockedCategories['h-et-f'] ? '/h-et-f' : ''"
+                  (click)="navigateToCategory($event, 'h-et-f')">
+                  <div class="icon">
+                     <span class="material-symbols-rounded">
+                        {{ categoryService.blockedCategories['h-et-f'] ? 'wc' : 'lock' }}
+                     </span>
+                  </div>
+                  <div class="text">H et F</div>
+               </a>
+            </li>
+         </div>
+         <div class="bottom">
+            <li>
+               <a routerLink="/quiz" (click)="onQuizClick()">
+                  <div class="icon">
+                     <span class="material-symbols-rounded">
+                        format_list_bulleted
+                        </span>
+                  </div>
+                  <div class="text">Logout</div>
+               </a>
+            </li>
+         </div>
+      </ul>
+   </div>
+   <router-outlet></router-outlet>
+   <footer>
+   </footer>
+</div>
+
+<!-- Ajout Lory : -->
+<audio id="debutSound" src="assets/debut-jeu/trouve_questionnaire.mp3"></audio>
+<audio id="disableElementsSound" src="assets/debut-jeu/avant_trouve_questionnaire.mp3"></audio>
+<audio id="categoryEnabledSound" src="assets/debut-jeu/yes.mp3"></audio>
+<audio id="categoryNotEnabledSound" src="assets/debut-jeu/nope.mp3"></audio>
+
+<div *ngIf="showArrow" class="arrow" [ngStyle]="arrowStyle"></div>
+
+<div *ngIf="showPopupParagraph1" class="popup-paragraph">
+   <p>Charlie : Je dois d'abord trouver le questionnaire.</p>
+</div>
+
+<div *ngIf="showPopupParagraph2" class="popup-paragraph">
+   <p>Charlie : Cette catégorie est bloquée. Faut que je trouve une solution.</p>
+</div>
+
+<div *ngIf="showPopupParagraph4" class="popup-paragraph">
+   <p>Charlie : Faut que je trouve le questionnaire !</p>
+</div>   
+<!-- <div *ngIf="showMainContent">Main Content</div> -->

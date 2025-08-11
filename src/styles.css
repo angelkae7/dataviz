@@ -1,0 +1,481 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+/* Font titre */
+@font-face {
+    font-family: "Renovate";
+    src: url("assets/fonts/titre/LTRenovate-ExtraBold.otf") format("otf");
+  }
+  
+  /* Font sous-partie */
+  @font-face {
+    font-family: "Cruinn";
+    src: url("assets/fonts/sous_partie/Cruinn Bold.ttf") format("ttf");
+  }
+  
+  /* Font paragraphe */
+  @font-face {
+    font-family: "Pitagon";
+    src: url("assets/fonts/paragraphe/PitagonSansMono-Medium.otf") format("otf"),
+      url("assets/fonts/paragraphe/PitagonSansMono-Medium.ttf") format("truetype"),
+      url("assets/fonts/paragraphe/PitagonSansMono-Medium.woff2") format("opentype");
+  }
+  
+  /* Différentes fonts pour les dialogues */
+  @font-face {
+    font-family: "book";
+    src: url("assets/fonts/dialogue/book/IllusionBook-Regular.otf") format("opentype"),
+      url("assets/fonts/dialogue/book/IllusionBook-Regular.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "chivo";
+    src: url("assets/fonts/dialogue/chivo/ChivoMono-Medium.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "grand";
+    src: url("assets/fonts/dialogue/grand/Grandstander-Medium.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "kanit";
+    src: url("assets/fonts/dialogue/kanit/Kanit-Medium.ttf") format("truetype");
+  }
+  
+/* Code CSS de la page */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Renovate", sans-serif;
+}
+
+::selection {
+   color: white;
+   background: #242038;
+}
+
+.sidebar {
+   box-shadow: -1px 0px 1px 0 rgba(0, 0, 0, 0.015), -2px -1px 2px 0 rgba(0, 0, 0, 0.025), -4px -2px 4px 0 rgba(0, 0, 0, 0.03), inset 1px 0px 1px 0 rgba(0, 0, 0, 0.015), inset 2px 1px 2px 0 rgba(0, 0, 0, 0.035), inset 4px 2px 4px 0 rgba(0, 0, 0, 0.065);
+   position: fixed;
+   width: 80px;
+   height: 90%;
+   background: #212121;
+   z-index: 100000;
+   transition: 0.5s;
+   padding-left: 8px;
+   overflow: hidden;
+   border-radius: 30px;
+   margin-top: 20px;
+   margin-left: 10px;
+
+}
+
+.sidebar.active {
+   width: 220px;
+
+}
+
+.sidebar ul {
+   position: relative;
+   height: 100vh;
+}
+
+.sidebar ul li {
+   position: relative;
+   list-style: none;
+}
+
+.sidebar ul li.active {
+   background: white;
+   border-top-left-radius: 50px;
+   border-bottom-left-radius: 50px;
+   /* transition:background ease ; */
+}
+
+.sidebar ul li.active::before {
+   content: "";
+   position: absolute;
+   top: -20px;
+   right: 0;
+   width: 20px;
+   height: 20px;
+   border-bottom-right-radius: 20px;
+   box-shadow: 5px 5px 0 5px white;
+   /* background: transparent; */
+}
+
+.sidebar ul li.active::after {
+   content: "";
+   position: absolute;
+   bottom: -20px;
+   right: 0;
+   width: 20px;
+   height: 20px;
+   border-top-right-radius: 20px;
+   box-shadow: 5px -5px 0 5px white;
+   background: transparent;
+}
+
+/* .sidebar ul li.logo {
+   margin-bottom: 50px;
+} */
+
+.sidebar ul li.logo .icon {
+   font-size: 2em;
+   color: rgb(255, 255, 255);
+}
+
+.sidebar ul li.logo .text {
+   font-size: 1.2em;
+   font-weight: 500;
+   color: white;
+}
+
+.sidebar ul li a {
+   position: relative;
+   display: flex;
+   white-space: nowrap;
+   text-decoration: none;
+}
+
+.sidebar ul li a .icon {
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-width: 60px;
+   padding-left: 10px;
+   height: 70px;
+   font-size: 1.5em;
+   color: #cac4ce;
+   transition: 0.5s;
+}
+
+.sidebar ul li a .text {
+   position: relative;
+   height: 70px;
+   display: flex;
+   align-items: center;
+   font-size: 1em;
+   color: #cac4ce;
+   padding-left: 15px;
+   text-transform: uppercase;
+   letter-spacing: 0.05em;
+   transition: 0.5s;
+}
+
+.sidebar ul li.active a .icon {
+   color: #fff;
+}
+
+.sidebar ul li.active a .text {
+   color: #8b32ff;
+}
+
+.sidebar ul li.active a .icon span {
+   z-index: 2;
+}
+
+.sidebar ul li:hover a .icon,
+.sidebar ul li:hover a .text {
+   color: rgb(80, 82, 86);
+}
+
+.sidebar ul li.active a .icon::before {
+   content: "";
+   position: absolute;
+   inset: 5px;
+   width: 60px;
+   background: #8b32ff;
+   border-radius: 50%;
+   transition: 0.5s;
+   /* z-index: 1; */
+}
+
+.sidebar ul li:hover.active a .icon::before {
+
+   background: #fff;
+}
+
+.bottom {
+   position: absolute;
+   bottom: 10%;
+   width: 100%;
+}
+.imageBox {
+   position: relative;
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   overflow: hidden;
+}
+.imageBox img {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+.menuToggle {
+   position: fixed;
+   top: 20px;
+   right: 20px;
+   width: 50px;
+   height: 50px;
+   background: #ffffff;
+   z-index: 1000;
+   cursor: pointer;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 30px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+* POUR LE CSS DES COMPONENTS  */
+
+
+#titre {
+   padding: 40px;
+   background: #f6f5f5;
+   border-radius: 26px;
+   box-shadow: -1px 0px 1px 0 rgba(0, 0, 0, 0.015), -2px -1px 2px 0 rgba(0, 0, 0, 0.025), -4px -2px 4px 0 rgba(0, 0, 0, 0.03), inset 1px 0px 1px 0 rgba(0, 0, 0, 0.015), inset 2px 1px 2px 0 rgba(0, 0, 0, 0.035), inset 4px 2px 4px 0 rgba(0, 0, 0, 0.065);
+   text-align: justify;
+   transition: background .5s ease-in;
+   transition: color .5s ease;
+   font-family: "Cruinn";
+}
+
+#titre:hover {
+   border-radius: 26px;
+}
+
+
+.float:hover {
+   transform: perspective(2px) translateZ(0);
+   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+   -webkit-transition-duration: 0.3s;
+   transition-duration: 0.3s;
+   -webkit-transition-property: transform;
+   transition-property: transform;
+   -webkit-transition-timing-function: ease-out;
+   transition-timing-function: ease-out;
+
+   transform: translateY(-2px);
+}
+
+/* FONT FAMILY  */
+
+.pitagon {
+   font-family: "Pitagon";
+}
+
+.kanit {
+   font-family: "kanit";
+}
+
+.renovate {
+   font-family: "renovate";
+}
+
+.chivo {
+   font-family: "Chivo";
+}
+
+/* FONT SIZE */
+
+.f-12 {
+   font-size: 11px;
+   margin-top: 12px;
+   /* font-family: "Chivo"; */
+}
+
+.f-small {
+   font-size: small;
+}
+
+.wh-font {
+   color: #212121;
+}
+
+.whi-font {
+   color: white;
+}
+
+/* DISPLAY  */
+
+.col {
+   display: flex;
+   flex-direction: column;
+   justify-content: start;
+}
+
+
+.row {
+   display: flex;
+   flex-direction: row;
+}
+
+.row-2 {
+   border-radius: 30px;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-around;
+}
+.br-15 {
+   border-radius: 15px;
+}
+
+
+
+/* PADDINGS */
+
+.p-10 {
+   padding: 10px;
+}
+
+.p-25 {
+   padding: 25px;
+}
+
+.p-5 {
+   padding: 5px 5px 5px 15px;
+}
+
+.p-15 {
+   padding: 10px 10px 20px 20px;
+}
+
+.p-5-15 {
+   padding: 5px 15px;
+}
+
+/* MARGIN  */
+
+.m-30-10 {
+   margin: 30px 10px;
+}
+
+.m-10-10 {
+   margin: 15px 15px;
+}
+
+.m-10-10-10 {
+   margin: 10px 10px 0 0;
+}
+
+.m-10-10-5 {
+   margin: 20px 10px 5px 1px;
+}
+
+.m-l-10 {
+   margin-left: 10px;
+}
+
+.m-r-10 {
+   margin-right: 10px;
+}
+
+
+.justify {
+   text-align: justify;
+}
+
+
+.bg-grey {
+   background-color: #f6f5f579;
+}
+
+.bg-white {
+   background-color: #fff;
+}
+
+.bg-dark {
+   color: #f6f5f5;
+   background-color: #212121;
+}
+
+.bg-lighter {
+   background-color: #f6f6f6;
+}
+
+
+.scroll-shadow {
+   box-shadow: inset 2px 2px 13px #cdcdcd,
+      inset -2px -2px 13px #ffffff;
+
+}
+
+.scroll-shadow-2 {
+   box-shadow: inset 2px 2px 13px #4b4b4b,
+      inset -2px -2px 13px #ffffff;
+   overflow-y: scroll;
+   overflow-x: hidden;
+   -webkit-overflow-scrolling: touch;
+   scroll-behavior: smooth;
+   border-radius: 33px;
+
+
+}
+
+.scroll-shadow-2::-webkit-scrollbar-thumb {
+   background-color: white;
+   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+   border-radius: 8px;
+   /* border: 3px solid #f5f5f5; */
+}
+
+.scroll-shadow-2::-webkit-scrollbar {
+   width: 12px;
+}
+
+.scroll-shadow-2::-webkit-scrollbar-track {
+   background-color: transparent;
+
+}
+
+.scroll {
+   overflow-y: scroll;
+   overflow-x: hidden;
+   -webkit-overflow-scrolling: touch;
+   scroll-behavior: smooth;
+   scrollbar-width: none;
+
+   border-radius: 33px;
+}
+
+.inner-shadow {
+   box-shadow: -1px 0px 1px 0 rgba(0, 0, 0, 0.015), 
+   -2px -1px 2px 0 rgba(0, 0, 0, 0.025), 
+   -4px -2px 4px 0 rgba(0, 0, 0, 0.03), 
+   inset 1px 0px 1px 0 rgba(0, 0, 0, 0.015), 
+   inset 2px 1px 2px 0 rgba(0, 0, 0, 0.035), 
+   inset 4px 2px 4px 0 rgba(0, 0, 0, 0.065);
+}
+
+.shadow {
+   box-shadow: rgba(0, 0, 0, 0.671) 0px 2px 4px;
+}
+
+.shadow-lighter {
+   box-shadow: rgba(0, 0, 0, 0.275) 0px 2px 4px;
+}
+
+.bloc1 {
+   margin: 10px;
+}
+
+.bloc1 span {
+   font-size: 12px;
+}
+
+.light-shadow {
+   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.padding-top-30 {
+   padding-top: 30px;
+}

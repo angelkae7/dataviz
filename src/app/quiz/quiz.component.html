@@ -1,0 +1,54 @@
+<div class="container">
+  <!-- Partie Discu -->
+  <div class="conversation">
+    <div *ngFor="let message of messages" class="message" [ngClass]="message.sender">
+      {{ message.displayedText }}
+    </div>
+  </div>
+
+  <!-- Bouton discu -->
+  <button *ngIf="!showQuiz" [disabled]="!canClickSendButton" [ngClass]="{'enabled': canClickSendButton, 'disabled': !canClickSendButton}" (click)="sendMessage()">Envoyer un message</button>
+
+  <!-- Partie Quiz -->
+  <div *ngIf="showQuiz" class="quiz">
+    <h1>Les causes de décès en Nouvelle-Calédonie</h1>
+    <h2>Les maladies du corps</h2>
+    <form (ngSubmit)="validate($event)">
+      <div class="question" *ngFor="let question of questions; let i = index">
+    
+        <label>{{ question.label }}</label>
+        <select [(ngModel)]="question.selectedValue" [ngClass]="{'incorrect': question.isIncorrect}" [disabled]="isQuizLocked" name="question{{ i }}">
+          <option *ngFor="let option of question.options" [value]="option.text">{{ option.text }}</option>
+        </select>
+      </div>
+      <button type="submit" *ngIf="!isQuizLocked">Valider</button>
+    </form>
+    <div *ngIf="showInsufficientDataPopup" class="popup">
+      <div class="popup-content">
+        <span class="close" (click)="closePopup()"></span>
+        <app-second-quiz></app-second-quiz> <!-- Ajoutez ici le composant second-quiz -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Pop-up Paragraphs -->
+  <div *ngIf="showPopupParagraph1" class="popup-paragraph">
+    <p>Charlie : J'ai dû me tromper quelque part...</p>
+  </div>
+  <div *ngIf="showPopupParagraph2" class="popup-paragraph">
+    <p>Charlie : Données insuffisantes ? Y'a une nouvelle catégorie ?</p>
+  </div>
+  <div *ngIf="showPopupParagraph3" class="popup-paragraph">
+    <p>Charlie : Je devrais d'abord regarder les catégories.</p>
+  </div>
+  <div *ngIf="showPopupParagraph4" class="popup-paragraph">
+    <p>Charlie : Si j'arrive à fournir les bonnes réponses à l'IA, elle sera certainement capable de répondre à mes questions !</p>
+  </div>
+
+  <!-- Audio elements -->
+  <audio id="chercher" src="assets/debut-jeu/face_au_questionnaire.mp3"></audio>
+  <audio id="trueSound" src="assets/debut-jeu/yes.mp3"></audio>
+  <audio id="falseSound" src="assets/debut-jeu/nope.mp3"></audio>
+  <audio id="newCatUn" src="assets/quiz/new_categorie_un.mp3"></audio>
+  <audio id="faux" src="assets/debut-jeu/faux.mp3"></audio>
+</div>

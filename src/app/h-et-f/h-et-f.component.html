@@ -1,0 +1,62 @@
+<!-- h-et-f.component.html -->
+<section class="parent">
+  <div id="chart1">
+    <apx-chart
+      #chart
+      [series]="chartOptions1.series"
+      [chart]="chartOptions1.chart"
+      [title]="chartOptions1.title"
+      [xaxis]="chartOptions1.xaxis"
+      [yaxis]="chartOptions1.yaxis"
+      [dataLabels]="chartOptions1.dataLabels"
+      [stroke]="chartOptions1.stroke"
+      [markers]="chartOptions1.markers"
+      [legend]="chartOptions1.legend"
+      [tooltip]="chartOptions1.tooltip"
+      [grid]="chartOptions1.grid"
+      [responsive]="chartOptions1.responsive"
+    >
+    </apx-chart>
+  </div>
+  <div id="chart2" style="margin-top: 40px">
+    <apx-chart
+      [series]="chartOptions2.series"
+      [chart]="chartOptions2.chart"
+      [title]="chartOptions2.title"
+      [xaxis]="chartOptions2.xaxis"
+      [yaxis]="chartOptions2.yaxis"
+      [dataLabels]="chartOptions2.dataLabels"
+      [stroke]="chartOptions2.stroke"
+      [markers]="chartOptions2.markers"
+      [legend]="chartOptions2.legend"
+      [tooltip]="chartOptions2.tooltip"
+      [grid]="chartOptions2.grid"
+      [responsive]="chartOptions2.responsive"
+    >
+    </apx-chart>
+  </div>
+  <div>
+  <!-- Graphique 3: Causes initiales de décès par sexe -->
+  <apx-chart
+    #chart3
+    [series]="chartOptions3.series"
+    [chart]="chartOptions3.chart"
+    [dataLabels]="chartOptions3.dataLabels"
+    [tooltip]="chartOptions3.tooltip"
+    [title]="chartOptions3.title"
+    [responsive]="chartOptions3.responsive"
+  ></apx-chart>
+</div>
+  <div>
+  <!-- Graphique 4: Causes initiales de décès par sexe -->
+  <apx-chart
+    #chart4
+    [series]="chartOptions4.series"
+    [chart]="chartOptions4.chart"
+    [dataLabels]="chartOptions4.dataLabels"
+    [tooltip]="chartOptions4.tooltip"
+    [title]="chartOptions4.title"
+    [responsive]="chartOptions4.responsive"
+  ></apx-chart>
+</div>
+</section>

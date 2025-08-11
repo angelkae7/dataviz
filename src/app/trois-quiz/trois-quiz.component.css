@@ -1,0 +1,151 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.811);
+    z-index: 1000;
+    /* Assurez-vous que l'overlay a un z-index inférieur à celui du bouton */
+    display: block;
+    /* Assurez-vous que le voile est visible lorsque showOverlay est vrai */
+}
+
+h2 {
+    margin-top: 7%;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.incorrect {
+    border: 1px solid red;
+}
+
+.popup-paragraph {
+    position: fixed;
+    font-family: 'Chivo', sans-serif;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.conversation {
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 20px;
+    max-width: 75%;
+    margin: 10px;
+}
+
+.message.human {
+    align-self: flex-end;
+    text-align: right;
+    background: #8b32ff;
+    color: white;
+}
+
+.message.ai {
+    align-self: flex-start;
+    text-align: left;
+    color: black;
+    background: #F4F4F4;
+}
+
+button.enabled {
+    background-color: green;
+    color: white;
+    width: 26%;
+    margin: auto;
+    cursor: pointer;
+}
+
+button.disabled {
+    background-color: gray;
+    color: darkgray;
+    width: 26%;
+    margin: auto;
+    cursor: not-allowed;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.hidden-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    bottom: 5%;
+    right: 5%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    font-family: 'Chivo', sans-serif;
+    text-align: center;
+    animation: bounce 1s infinite;
+    z-index: 1100;
+    /* Assurez-vous que le bouton a un z-index supérieur à celui de l'overlay */
+}
+
+.hidden-button:hover {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    bottom: 5%;
+    right: 5%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    font-family: 'Chivo', sans-serif;
+    text-align: center;
+    animation: bounce 1s infinite;
+    z-index: 1100;
+    /* Assurez-vous que le bouton a un z-index supérieur à celui de l'overlay */
+}
